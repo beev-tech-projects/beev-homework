@@ -3,9 +3,9 @@ ID,Brand,Model,Battery capacity (kWh),Current charge level (%),Status,Last updat
 3d69f6bf-32b9-4532-a1ca-29f0dd55167f,Renault,R5,109,83,in_use,2025-03-06 19:01:45,29.57,BEV,0
 e15fb567-29ff-48db-ae03-13cec8b73d0f,Tesla,Model Y,124,66,charging,2025-03-06 19:01:45,23.22,BEV,0
 cd5bce0a-ffa9-4424-87e4-00c3257a5131,Tesla,Model S,98,21,in_use,2025-03-06 19:01:45,10.42,BEV,0
-81b8a873-e811-4db2-9d78-e7f40bd6804b,VW,Passat,0,0.0,charging,2025-03-06 19:01:45,5.89,ICE,74.38
+81b8a873-e811-4db2-9d78-e7f40bd6804b,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
 b10a6784-2b82-4322-bd82-8aecaead8f2f,Renault,Captur,0,0.0,available,2025-03-06 19:01:45,6.94,ICE,72.32
-c3f791d4-c444-4d82-8fdd-8a775a6777f3,Ford,Mustang,0,0.0,charging,2025-03-06 19:01:45,7.64,ICE,98.64
+c3f791d4-c444-4d82-8fdd-8a775a6777f3,Ford,Mustang,0,0.0,available,2025-03-06 19:01:45,7.64,ICE,98.64
 9fd676c6-d8cc-4dd8-84c8-ad95c978fba0,Tesla,Model Y,124,62,charging,2025-03-06 19:01:45,23.22,BEV,0
 9f823266-5a03-40a9-b1cf-483a9167468c,Tesla,Model Y,124,15,in_use,2025-03-06 19:01:45,23.22,BEV,0
 44ce6c58-1498-4557-8366-a92e3b43af0f,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
@@ -23,14 +23,14 @@ dec3917e-e585-458f-b0c2-a9c3c1a69470,Nissan,Leaf,76,21,in_use,2025-03-06 19:01:4
 a11de8d5-6619-4122-8a5d-e8475021c1c1,BMW,i3,92,69,in_use,2025-03-06 19:01:45,28.57,BEV,0
 9826725b-33c4-4605-b129-9cd175cdd594,Renault,Captur,0,0.0,in_use,2025-03-06 19:01:45,6.94,ICE,72.32
 df812a39-2dbe-40ba-bf84-91b061dc6a5f,Nissan,Leaf,76,95,in_use,2025-03-06 19:01:45,15.97,BEV,0
-c0f376fa-17da-4ddf-932f-4773fbfd1445,Renault,Captur,0,0.0,charging,2025-03-06 19:01:45,6.94,ICE,72.32
+c0f376fa-17da-4ddf-932f-4773fbfd1445,Renault,Captur,0,0.0,in_use,2025-03-06 19:01:45,6.94,ICE,72.32
 921aa0ab-43cd-464f-b830-3e245e1db9bb,Renault,R5,109,65,charging,2025-03-06 19:01:45,29.57,BEV,0
 0ff180f7-20f7-4b8d-a203-e8f04b92c5ea,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
 3f72fbb0-1d46-4847-b4b0-dd9d4003b605,Audi,Q5,144,0,in_use,2025-03-06 19:01:45,29.76,BEV,0
 c266d26a-34fd-4621-acf9-a38df18ecb90,BMW,i3,92,77,available,2025-03-06 19:01:45,28.57,BEV,0
 2078dab5-cf32-4026-8ccd-b0ab7221f781,Tesla,Model Y,124,88,charging,2025-03-06 19:01:45,23.22,BEV,0
 e4840df4-b8e5-4df1-9e7d-19b66f26b35b,BMW,i3,92,48,available,2025-03-06 19:01:45,28.57,BEV,0
-07631f77-189f-45d8-b3b1-eab9912a2ee0,Ford,Mustang,0,0.0,charging,2025-03-06 19:01:45,7.64,ICE,98.64
+07631f77-189f-45d8-b3b1-eab9912a2ee0,Ford,Mustang,0,0.0,available,2025-03-06 19:01:45,7.64,ICE,98.64
 661b3552-91a4-4dea-ba75-e95cba796d29,Ford,Mustang,0,0.0,in_use,2025-03-06 19:01:45,7.64,ICE,98.64
 5982dedd-5759-4538-b7b0-2cce6b29c6fb,Tesla,Model Y,124,6,charging,2025-03-06 19:01:45,23.22,BEV,0
 2a23efd8-cf6c-40cb-bb72-1143b9b5b528,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
@@ -47,7 +47,7 @@ a78b8467-ea0f-4a68-aeaa-213ed8943194,BMW,i3,92,92,charging,2025-03-06 19:01:45,2
 ed10bd92-6a40-4bc4-95b7-3fb5e476fb79,Nissan,Leaf,76,95,charging,2025-03-06 19:01:45,15.97,BEV,0
 cc7ccb14-11ca-4692-a01d-f3542402173e,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
 0fdc1cce-237b-400d-9a66-429ca51fd2b0,Renault,Captur,0,0.0,in_use,2025-03-06 19:01:45,6.94,ICE,72.32
-cb206d41-2597-4cd1-be2b-9b53afef5768,Renault,Captur,0,0.0,charging,2025-03-06 19:01:45,6.94,ICE,72.32
+cb206d41-2597-4cd1-be2b-9b53afef5768,Renault,Captur,0,0.0,in_use,2025-03-06 19:01:45,6.94,ICE,72.32
 9700007c-28f1-4f16-93e3-165a7a417934,Ford,Mustang,0,0.0,available,2025-03-06 19:01:45,7.64,ICE,98.64
 60c32b19-150b-4549-af21-df377b0be441,VW,Passat,0,0.0,in_use,2025-03-06 19:01:45,5.89,ICE,74.38
 0ac394dd-f78a-41c0-9cf0-da424e732448,BMW,i3,92,72,in_use,2025-03-06 19:01:45,28.57,BEV,0
@@ -59,7 +59,7 @@ af41048d-7dbb-4c6f-aef0-6d39b05b3c4c,Ford,Mustang,0,0.0,available,2025-03-06 19:
 4ba7a96f-d8ad-44d1-983f-be73e4a7a417,Renault,Captur,0,0.0,available,2025-03-06 19:01:45,6.94,ICE,72.32
 0271519c-49ab-4de8-ab33-e9ade1273fa3,BMW,i3,92,52,in_use,2025-03-06 19:01:45,28.57,BEV,0
 bf912bde-4af0-48c6-ba78-51d19aaea95b,Tesla,Model S,98,76,charging,2025-03-06 19:01:45,10.42,BEV,0
-cdc98cfe-ec33-4722-a91b-1bcb2c7de817,Ford,Mustang,0,0.0,charging,2025-03-06 19:01:45,7.64,ICE,98.64
+cdc98cfe-ec33-4722-a91b-1bcb2c7de817,Ford,Mustang,0,0.0,in_use,2025-03-06 19:01:45,7.64,ICE,98.64
 1a5272fc-c67e-447e-9d5f-d3731b2cdf1d,Tesla,Model Y,124,66,charging,2025-03-06 19:01:45,23.22,BEV,0
 ace09141-7303-46d9-9465-27ca8d9a0a91,BMW,i3,92,75,charging,2025-03-06 19:01:45,28.57,BEV,0
 f45ac479-f9b3-4062-9d9c-30b496e81bc8,Renault,R5,109,97,available,2025-03-06 19:01:45,29.57,BEV,0
