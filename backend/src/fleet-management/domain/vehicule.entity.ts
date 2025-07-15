@@ -20,7 +20,6 @@ export class Vehicule {
   @Min(0)
   currentChargeLevel: number;
 
-  @IsString()
   @IsEnum(Status)
   status: Status;
 
@@ -31,7 +30,6 @@ export class Vehicule {
   @Min(0)
   averageEnergyConsumption: number;
 
-  @IsString()
   @IsEnum(VehiculeType)
   type: VehiculeType;
 

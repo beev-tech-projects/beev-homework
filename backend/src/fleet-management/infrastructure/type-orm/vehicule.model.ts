@@ -23,7 +23,7 @@ export class VehiculeModel extends Vehicule {
   @Column({ type: 'enum', enum: Status })
   declare status: Status;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'timestamp' })
   declare lastUpdated: Date;
 
   @Column({ type: 'float' })

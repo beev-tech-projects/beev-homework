@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Inject,
+  Param,
   Post,
   Put,
   Query,
@@ -43,13 +44,13 @@ export class VehiculeController {
   }
 
   @Get(':id')
-  async getVehiculeById(@Query('id') id: string): Promise<Vehicule | null> {
+  async getVehiculeById(@Param('id') id: string): Promise<Vehicule | null> {
     return this.vehiculeService.getVehiculeById(id);
   }
 
   @Put(':id')
   async updateVehicule(
-    @Query('id') id: string,
+    @Param('id') id: string,
     @Body() vehiculeData: Vehicule,
   ): Promise<Vehicule> {
     const vehicule = { ...vehiculeData, id };
@@ -57,7 +58,7 @@ export class VehiculeController {
   }
 
   @Delete(':id')
-  async deleteVehicule(@Query('id') id: string): Promise<void> {
+  async deleteVehicule(@Param('id') id: string): Promise<void> {
     return this.vehiculeService.deleteVehicule(id);
   }
 }

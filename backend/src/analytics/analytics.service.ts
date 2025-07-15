@@ -68,11 +68,15 @@ export class AnalyticsService {
   }
 
   async getFleetAvailabilityRate(filter: VehiculeFilter): Promise<number> {
-    filter.status = Status.available;
+    const modifiedFilter = { ...filter, status: Status.available };
 
-    const availableVehicules = await this.getFilteredVehicules(filter);
+    const availableVehicules = await this.getFilteredVehicules(modifiedFilter);
 
     const vehicules = await this.getFilteredVehicules(new VehiculeFilter());
+
+    if (!vehicules || vehicules.length === 0) {
+      return 0;
+    }
 
     if (availableVehicules.length === 0) {
       return 0;
@@ -82,13 +86,19 @@ export class AnalyticsService {
   }
 
   async getChargingVehicules(filter: VehiculeFilter): Promise<Vehicule[]> {
-    filter.status = Status.charging;
-    return await this.getFilteredVehicules(filter);
+    const modifiedFilter = new VehiculeFilter({
+      ...filter,
+      status: Status.charging,
+    });
+    return await this.getFilteredVehicules(modifiedFilter);
   }
 
   async getInUseVehicules(filter: VehiculeFilter): Promise<Vehicule[]> {
-    filter.status = Status.in_use;
-    return await this.getFilteredVehicules(filter);
+    const modifiedFilter = new VehiculeFilter({
+      ...filter,
+      status: Status.in_use,
+    });
+    return await this.getFilteredVehicules(modifiedFilter);
   }
 
   private async getFilteredVehicules(

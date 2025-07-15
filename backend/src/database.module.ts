@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { VehiculeModel } from '@fleet-management/infrastructure/type-orm/vehicule.model';
 import { VersionEntity } from './version.entity';
 
 @Module({
@@ -14,7 +13,6 @@ import { VersionEntity } from './version.entity';
       database: 'beev',
       synchronize: true,
       autoLoadEntities: true,
-      entities: [VehiculeModel, VersionEntity],
     }),
     TypeOrmModule.forFeature([VersionEntity]),
   ],
