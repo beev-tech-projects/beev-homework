@@ -16,6 +16,10 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@fleet-management/*": ["src/fleet-management/*"],
+      "@analytics/*": ["src/analytics/*"]
+    }
   }
 }
