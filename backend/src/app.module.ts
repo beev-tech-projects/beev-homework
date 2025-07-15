@@ -2,28 +2,29 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { VersionEntity } from './version.entity';
 import { Keyv, createKeyv } from '@keyv/redis';
 import { CacheableMemory } from 'cacheable';
 import { CacheModule } from '@nestjs/cache-manager';
+import { AnalyticsModule } from '@analytics/analytics.module';
+import { VehiculeModule } from '@fleet-management/infrastructure/nest/vehicule.module';
 
 @Module({
   imports: [
     DatabaseModule,
-    TypeOrmModule.forFeature([VersionEntity]),
+    VehiculeModule,
+    AnalyticsModule,
     CacheModule.registerAsync({
-      useFactory: async () => {
+      useFactory: () => {
         return {
           stores: [
             new Keyv({
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
               store: new CacheableMemory({ lruSize: 5000 }),
             }),
             createKeyv('redis://localhost:6379'),
           ],
         };
       },
+      isGlobal: true,
     }),
   ],
   controllers: [AppController],
