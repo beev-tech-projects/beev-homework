@@ -4,8 +4,12 @@ import { VehicleStatsSkeleton } from "@/components/vehicle/VehicleStatsSkeleton"
 import { VehicleFilters } from "@/components/vehicle/VehicleFilters";
 import { VehicleFilter } from "@/services/vehicle.service";
 import { useVehicleStats, useVehicleTable } from "@/hooks";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function FleetManagement() {
+  const navigate = useNavigate();
   const {
     loading,
     filter,
@@ -22,7 +26,6 @@ export default function FleetManagement() {
 
   const { stats: vehicleStats, loading: vehicleStatsLoading } =
     useVehicleStats(filter);
-
 
   const handleClearFilters = () => {
     updateFilter({
@@ -45,13 +48,24 @@ export default function FleetManagement() {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Gestion de la Flotte
-        </h1>
-        <p className="text-gray-600">
-          Gérez et surveillez tous vos véhicules depuis cette interface
-          centralisée.
-        </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Gestion de la Flotte
+            </h1>
+            <p className="text-gray-600">
+              Gérez et surveillez tous vos véhicules depuis cette interface
+              centralisée.
+            </p>
+          </div>
+          <Button
+            onClick={() => navigate("/create-vehicle")}
+            className="flex items-center gap-2"
+          >
+            <Plus className="h-4 w-4" />
+            Nouveau véhicule
+          </Button>
+        </div>
       </div>
 
       {vehicleStatsLoading ? (

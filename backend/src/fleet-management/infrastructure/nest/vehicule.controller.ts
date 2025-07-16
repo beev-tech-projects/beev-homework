@@ -33,7 +33,7 @@ export class VehiculeController {
       : undefined;
     return this.vehiculeService.getFilteredVehicules(
       new VehiculeFilter(parsedFilter),
-      sort,
+      new VehiculeSorter(sort?.field, sort?.direction),
       page,
       pageSize,
     );

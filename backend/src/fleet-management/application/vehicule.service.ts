@@ -20,7 +20,6 @@ export class VehiculeApplicationService {
     pageSize?: number,
   ): Promise<{ vehicules: Vehicule[]; total: number }> {
     const queryBuilder = this.vehiculeRepository.createQueryBuilder('vehicule');
-    console.log('Filter in service:', filter);
     const filteredQuery = VehiculeFilter.applyFilterAndSort(
       queryBuilder,
       filter,

@@ -37,7 +37,6 @@ export default function Dashboard() {
     );
   }
 
-  console.log("Fleet Efficiency Data:", fleetEfficiency.data);
   return (
     <main className="flex flex-col items-center justify-start gap-4 px-8 py-16">
       <SidebarTrigger className="absolute top-4 left-4" />
@@ -89,7 +88,7 @@ export default function Dashboard() {
             <div className="flex justify-between">
               <span>Taux de disponibilité:</span>
               <span className="font-bold text-blue-600">
-                {fleetOperational.data?.fleetAvailabilityRate}%
+                {fleetOperational.data?.fleetAvailabilityRate.toFixed(2)}%
               </span>
             </div>
             <div className="flex justify-between">

@@ -25,7 +25,6 @@ export function useVehicleStats(filter?: VehicleFilter) {
       try {
         const globalStats = await vehicleService.getVehicleStats(filter);
         setStats(globalStats);
-        console.log("Statistiques globales:", globalStats);
       } catch (err) {
         console.error("Erreur lors du chargement des statistiques:", err);
         setError(

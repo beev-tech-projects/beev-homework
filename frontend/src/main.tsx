@@ -8,6 +8,8 @@ import { SidebarProvider } from "./components/ui/sidebar.tsx";
 import { AppSidebar } from "./components/atoms/sidebar/AppSidebar.tsx";
 import FleetManagement from "./pages/FleetManagement.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
+import Vehicle from "./pages/Vehicle.tsx";
+import CreateVehicle from "./pages/CreateVehicle.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,8 @@ createRoot(document.getElementById("root")!).render(
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/fleet-management" element={<FleetManagement />} />
+            <Route path="/vehicle/:id" element={<Vehicle />} />
+            <Route path="/create-vehicle" element={<CreateVehicle />} />
             <Route path="/version" element={<Version />} />
           </Routes>
         </SidebarProvider>

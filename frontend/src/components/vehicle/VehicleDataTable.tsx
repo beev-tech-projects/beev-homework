@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import {
   Table,
   TableBody,
@@ -43,6 +44,7 @@ export function VehicleDataTable({
   onPageChange,
   onRefresh,
 }: VehicleDataTableProps) {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [sortField, setSortField] = useState<string>("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
@@ -195,7 +197,11 @@ export function VehicleDataTable({
               </TableRow>
             ) : (
               vehicles.map((vehicle) => (
-                <TableRow key={vehicle.id}>
+                <TableRow
+                  key={vehicle.id}
+                  className="cursor-pointer hover:bg-gray-50"
+                  onClick={() => navigate(`/vehicle/${vehicle.id}`)}
+                >
                   <TableCell className="font-medium">{vehicle.brand}</TableCell>
                   <TableCell>{vehicle.model}</TableCell>
                   <TableCell>
