@@ -7,9 +7,15 @@ import { CacheableMemory } from 'cacheable';
 import { CacheModule } from '@nestjs/cache-manager';
 import { AnalyticsModule } from '@analytics/analytics.module';
 import { VehiculeModule } from '@fleet-management/infrastructure/nest/vehicule.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: ['.env', '../.env'],
+      isGlobal: true,
+      ignoreEnvFile: false,
+    }),
     DatabaseModule,
     VehiculeModule,
     AnalyticsModule,
