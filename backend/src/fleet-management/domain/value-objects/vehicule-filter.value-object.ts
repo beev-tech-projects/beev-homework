@@ -133,9 +133,17 @@ export class VehiculeFilter {
       filteredQuery.orderBy(`vehicule.${sort.field}`, sort.direction);
     }
 
-    filteredQuery
-      .skip(((page ?? 1) - 1) * (pageSize ?? 10))
-      .take(pageSize ?? 10);
+    if (page !== undefined && pageSize !== undefined) {
+      if (page < 1) {
+        throw new Error('Page number must be greater than 0');
+      }
+      if (pageSize < 1) {
+        throw new Error('Page size must be greater than 0');
+      }
+      filteredQuery
+        .skip(((page ?? 1) - 1) * (pageSize ?? 10))
+        .take(pageSize ?? 10);
+    }
 
     return filteredQuery;
   }
