@@ -13,7 +13,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  await app.listen(config.get('PORT') ?? 3000);
+  await app.listen(parseInt(config.get('PORT') || '3000', 10));
 }
 
 void bootstrap();

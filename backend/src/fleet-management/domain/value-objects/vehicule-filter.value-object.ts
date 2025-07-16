@@ -9,6 +9,7 @@ export class VehiculeFilter {
   model?: string;
   status?: Status;
   type?: VehiculeType;
+  search?: string; // Nouveau champ pour la recherche globale
   minBatteryCapacity?: number;
   maxBatteryCapacity?: number;
   minCurrentChargeLevel?: number;
@@ -43,13 +44,13 @@ export class VehiculeFilter {
     ];
 
     if (filter?.brand) {
-      filteredQuery.andWhere('vehicule.brand = :brand', {
-        brand: filter.brand,
+      filteredQuery.andWhere('vehicule.brand ILIKE :brand', {
+        brand: `%${filter.brand}%`,
       });
     }
     if (filter?.model) {
-      filteredQuery.andWhere('vehicule.model = :model', {
-        model: filter.model,
+      filteredQuery.andWhere('vehicule.model ILIKE :model', {
+        model: `%${filter.model}%`,
       });
     }
     if (filter?.status) {

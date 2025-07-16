@@ -23,13 +23,16 @@ export class VehiculeController {
 
   @Get()
   async getVehicules(
-    @Query('filter') filter: VehiculeFilter,
+    @Query('filter') filter: string,
     @Query('sort') sort: VehiculeSorter,
-    @Query('page') page: number = 1,
-    @Query('pageSize') pageSize: number = 10,
+    @Query('page') page?: number,
+    @Query('pageSize') pageSize?: number,
   ): Promise<{ vehicules: Vehicule[]; total: number }> {
+    const parsedFilter = filter
+      ? (JSON.parse(filter) as Partial<VehiculeFilter>)
+      : undefined;
     return this.vehiculeService.getFilteredVehicules(
-      filter,
+      new VehiculeFilter(parsedFilter),
       sort,
       page,
       pageSize,

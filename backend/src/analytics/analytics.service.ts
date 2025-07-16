@@ -38,6 +38,9 @@ export class AnalyticsService {
     const comparison = { [VehiculeType.BEV]: 0, [VehiculeType.ICE]: 0 };
 
     vehicules.forEach((vehicule) => {
+      console.log(
+        `Vehicule Type: ${vehicule.type}, Emission: ${vehicule.emissionGco2Km}`,
+      );
       if (vehicule.type === VehiculeType.BEV) {
         comparison[VehiculeType.BEV] += vehicule.emissionGco2Km;
       } else {

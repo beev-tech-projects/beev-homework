@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Version } from "./pages/Version.tsx";
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
 import { AppSidebar } from "./components/atoms/sidebar/AppSidebar.tsx";
-import { FleetManagement } from "./pages/FleetManagement.tsx";
+import FleetManagement from "./pages/FleetManagement.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 
 const queryClient = new QueryClient();

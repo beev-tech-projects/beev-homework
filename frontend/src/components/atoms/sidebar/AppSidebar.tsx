@@ -33,7 +33,7 @@ const sidebarItems = [
 ];
 
 export function AppSidebar() {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, isMobile } = useSidebar();
 
   return (
     <Sidebar>
@@ -45,7 +45,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {sidebarItems.map((item) => (
                 <SidebarMenuItem key={item.to}>
-                  <SidebarMenuButton asChild onClick={toggleSidebar}>
+                  <SidebarMenuButton asChild onClick={isMobile ? toggleSidebar : undefined}>
                     <NavLink to={item.to}>
                       <item.icon />
                       {item.label}
