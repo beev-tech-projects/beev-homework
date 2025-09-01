@@ -22,12 +22,11 @@ During the review process, be prepared for:
 
 ## Timeline & Submission
 
-- **Duration**: 3 days
+- **Duration**: Go through the questions and let us know when you will send us back your solution
 - **Expected effort**: 4-5 hours
 - **Submission method: Private GitHub repository**
 - **Share access in a private github repository with**:
   - https://github.com/antonin-beev
-  - https://github.com/JadBeev
   - https://github.com/CarlEH
 
 ## Project Requirements
