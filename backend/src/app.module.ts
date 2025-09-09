@@ -7,9 +7,14 @@ import { VersionEntity } from './version.entity';
 import { Keyv, createKeyv } from '@keyv/redis';
 import { CacheableMemory } from 'cacheable';
 import { CacheModule } from '@nestjs/cache-manager';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
     DatabaseModule,
     TypeOrmModule.forFeature([VersionEntity]),
     CacheModule.registerAsync({
