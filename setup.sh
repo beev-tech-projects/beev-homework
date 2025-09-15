@@ -25,6 +25,6 @@ tmux new-session -d -s "$SESSION_NAME" -n "docker" \; \
   new-window -n "terminal" \; \
   select-window -t 0
 
-echo "✅ Setup complete! Attaching to tmux session: $SESSION_NAME"
-echo "💡 Use Ctrl+B then window number (0-3) to switch between windows"
+echo "Setup complete! Attaching to tmux session: $SESSION_NAME"
+echo "Use Ctrl+B then window number (0-3) to switch between windows"
 tmux attach-session -t "$SESSION_NAME"

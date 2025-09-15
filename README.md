@@ -135,8 +135,8 @@ We're looking for:
 | Service        | Internal Port | External Port | Access URL                    | Description                     |
 |---------------|--------------|--------------|-------------------------------|--------------------------------|
 | Frontend      | 8080         | 8000         | http://localhost:8000         | React Frontend Application     |
-| Backend       | 3000         | 3000         | http://localhost:3000         | NestJS Backend API             |
-| Postgres      | 5432         | 5432         | localhost:5432                | Database Service               |
+| Backend       | 3030         | 3030         | http://localhost:3030         | NestJS Backend API             |
+| Postgres      | 5432         | 5433         | localhost:5433                | Database Service               |
 | PgAdmin       | 80           | 8001         | http://localhost:8001         | Postgres Management Interface  |
 | Redis         | 6379         | 6379         | localhost:6379                | Key-Value Store                |
 | Redis Insight | 5540         | 8002         | http://localhost:8002         | Redis Management Interface     |

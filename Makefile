@@ -15,19 +15,26 @@ help: ## Display this help screen
 
 .PHONY: setup
 setup: ## Complete setup: env + install + docker + frontend + backend in tmux
-	@echo "🚀 Starting complete setup for candidate: $(CANDIDATE_NAME)"
+	@echo "Starting complete setup for candidate: $(CANDIDATE_NAME)"
 	@bash setup.sh
+
+.PHONY: cleanup
+cleanup: ## Stop everything and cleanup
+	@echo "Cleaning up $(CANDIDATE_NAME) development environment..."
+	$(dc) --profile $(DOCKER_PROFILE) down --volumes --remove-orphans
+	@tmux kill-session -t "$(CANDIDATE_NAME)-dev" 2>/dev/null || true
+	@echo "Cleanup complete!"
 
 .PHONY: env-init
 env-init: ## Init env
 	cp .env.example .env
 
 .PHONY: du
-du: ## Up pofile via docker compose
+du: ## Up profile via docker compose
 	$(dc) --profile $(DOCKER_PROFILE) up
 
 .PHONY: dd
-dd: ## Down pofile via docker compose
+dd: ## Down profile via docker compose
 	$(dc) --profile $(DOCKER_PROFILE) down --volumes
 
 .PHONY: backend
